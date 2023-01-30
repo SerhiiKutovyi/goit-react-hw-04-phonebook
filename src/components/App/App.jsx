@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import { Section } from './App.styles';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm/ContactForm ';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
+import { ContactForm } from '../ContactForm/ContactForm ';
+import { ContactList } from '../ContactList/ContactList';
+import { Filter } from '../Filter/Filter';
 
 const LOCAL_KEY = 'Users-key';
 
@@ -16,7 +16,6 @@ export class App extends Component {
   componentDidMount() {
     const UsersKeys = localStorage.getItem(LOCAL_KEY);
     if (UsersKeys) {
-      console.log(UsersKeys);
       this.setState({ contacts: JSON.parse(UsersKeys) });
     }
   }
@@ -88,25 +87,3 @@ export class App extends Component {
     );
   }
 }
-
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 40px;
-
-  h1 {
-    margin-bottom: 40px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 72px;
-
-    color: #000000;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-  }
-`;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormStyled } from './ContactForm.style';
+import { FormStyled } from './ContactForm.styles';
 
 export class ContactForm extends Component {
   state = {

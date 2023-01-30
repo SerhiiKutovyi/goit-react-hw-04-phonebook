@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FilterStyled } from './Filter.style';
+import { FilterStyled } from './Filter.styles';
 import { nanoid } from 'nanoid';
 
 export const Filter = ({ click, filter }) => {
