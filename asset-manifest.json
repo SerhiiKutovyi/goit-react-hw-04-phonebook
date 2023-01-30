@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SerhiiKutovyi/goit-react-hw-04-phonebook.git/static/css/main.341b3e68.css",
+    "main.js": "/SerhiiKutovyi/goit-react-hw-04-phonebook.git/static/js/main.6faa3257.js",
+    "index.html": "/SerhiiKutovyi/goit-react-hw-04-phonebook.git/index.html",
+    "main.341b3e68.css.map": "/SerhiiKutovyi/goit-react-hw-04-phonebook.git/static/css/main.341b3e68.css.map",
+    "main.6faa3257.js.map": "/SerhiiKutovyi/goit-react-hw-04-phonebook.git/static/js/main.6faa3257.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.341b3e68.css",
+    "static/js/main.6faa3257.js"
+  ]
+}
