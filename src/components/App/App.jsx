@@ -1,11 +1,11 @@
 import { Section } from './App.styles';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from '../ContactForm/ContactForm ';
-// import { ContactList } from '../ContactList/ContactList';
+import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 
-const LOCAL_KEY = 'Users-key';
+// const LOCAL_KEY = 'Users-key';
 
 export const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -26,13 +26,28 @@ export const App = () => {
       alert(`${data.name} is already in contacts!`);
       return;
     }
-    setContacts([newUser, ...contacts]);
-    return;
+    setContacts(() => [newUser, ...contacts]);
   };
 
-  // const filterUsers = event => {
-  //   setFilter({ filter: event.target.value });
-  // };
+  const filterUsers = event => {
+    setFilter({ filter: event.target.value });
+  };
+
+  const verification = () => {
+    if (!filter) {
+      return contacts;
+    } else {
+      return contacts.filter(
+        user =>
+          user.name.toLowerCase().includes(filter.toLowerCase()) ||
+          user.number.includes(filter)
+      );
+    }
+  };
+
+  const deleteUsers = userId => {
+    setContacts(contacts.filter(user => user.id !== userId));
+  };
 
   return (
     <>
@@ -40,12 +55,9 @@ export const App = () => {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={formSubmitHandler} />
         <h2>Contacts</h2>
-        {/* <Filter filter={setFilter} click={filterUsers} /> */}
+        <Filter filter={setFilter} click={filterUsers} />
 
-        {/* <ContactList
-          contacts={this.verification()}
-          deleteUsers={this.deleteUsers}
-        /> */}
+        <ContactList contacts={verification()} deleteUsers={deleteUsers} />
       </Section>
     </>
   );

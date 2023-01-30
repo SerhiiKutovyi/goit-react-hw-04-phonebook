@@ -12,7 +12,7 @@ export const Filter = ({ click, filter }) => {
           id={filterId}
           type="text"
           name="Find contacts by name"
-          value={filter}
+          // value={filter}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
