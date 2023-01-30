@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { ContactStyled } from './ContactList.styles';
 
 export const ContactList = ({ contacts, deleteUsers }) => {
@@ -25,7 +25,7 @@ export const ContactList = ({ contacts, deleteUsers }) => {
   );
 };
 
-ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  deleteUsers: PropTypes.func.isRequired,
-};
+// ContactList.propTypes = {
+//   contacts: PropTypes.array.isRequired,
+//   deleteUsers: PropTypes.func.isRequired,
+// };

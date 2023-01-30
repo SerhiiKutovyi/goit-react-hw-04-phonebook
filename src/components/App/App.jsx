@@ -2,7 +2,7 @@ import { Section } from './App.styles';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from '../ContactForm/ContactForm ';
-import { ContactList } from '../ContactList/ContactList';
+// import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 
 const LOCAL_KEY = 'Users-key';
@@ -11,32 +11,28 @@ export const App = () => {
   const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    const UsersKeys = localStorage.getItem(LOCAL_KEY);
-    localStorage.setItem(LOCAL_KEY, JSON.stringify(contacts));
-    setContacts({ contacts: JSON.parse(UsersKeys) });
-  }, [contacts]);
+  // useEffect(() => {
+  //   const UsersKeys = localStorage.getItem(LOCAL_KEY);
+  //   localStorage.setItem(LOCAL_KEY, JSON.stringify(contacts));
+  //   setContacts({ contacts: JSON.parse(UsersKeys) });
+  // }, [contacts]);
 
   const formSubmitHandler = data => {
     const newUser = {
       id: nanoid(),
       ...data,
     };
-    if (setContacts.some(ele => ele.name === data.name)) {
+    if (contacts.find(contact => contact.name === data.name)) {
       alert(`${data.name} is already in contacts!`);
       return;
-    } else {
-      this.setState(prevState => {
-        return {
-          contacts: [...prevState.contacts, newUser],
-        };
-      });
     }
+    setContacts([newUser, ...contacts]);
+    return;
   };
 
-  const filterUsers = event => {
-    setFilter({ filter: event.target.value });
-  };
+  // const filterUsers = event => {
+  //   setFilter({ filter: event.target.value });
+  // };
 
   return (
     <>
@@ -44,7 +40,7 @@ export const App = () => {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={formSubmitHandler} />
         <h2>Contacts</h2>
-        <Filter filter={setFilter} click={filterUsers} />
+        {/* <Filter filter={setFilter} click={filterUsers} /> */}
 
         {/* <ContactList
           contacts={this.verification()}
