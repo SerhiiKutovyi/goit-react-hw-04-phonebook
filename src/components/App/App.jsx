@@ -19,7 +19,6 @@ export const App = () => {
   }, [contacts]);
 
   function formSubmitHandler(data) {
-    console.log(data);
     const newUser = {
       id: nanoid(),
       ...data,
