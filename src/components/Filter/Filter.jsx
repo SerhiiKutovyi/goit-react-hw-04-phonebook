@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { FilterStyled } from './Filter.styles';
 import { nanoid } from 'nanoid';
 
@@ -24,7 +24,7 @@ export const Filter = ({ click, filter }) => {
   );
 };
 
-// Filter.propTypes = {
-//   click: PropTypes.func.isRequired,
-//   filter: PropTypes.string.isRequired,
-// };
+Filter.propTypes = {
+  click: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+};
