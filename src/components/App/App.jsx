@@ -27,7 +27,7 @@ export const App = () => {
       alert(`${data.name} is already in contacts!`);
       return;
     }
-    setContacts(() => [newUser, ...contacts]);
+    setContacts(prevContacts => [newUser, ...prevContacts]);
   }
 
   const filterUsers = event => {
